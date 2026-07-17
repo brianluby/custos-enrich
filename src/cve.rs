@@ -17,7 +17,8 @@ impl CveId {
     ///
     /// # Errors
     ///
-    /// Returns [`CveIdError`] when the value is not `CVE-YYYY-NNNN...`.
+    /// Returns [`CveIdError`] unless the value starts with `CVE-YYYY-` and ends
+    /// with a sequence of 4 to 19 digits.
     pub fn new(value: impl AsRef<str>) -> Result<Self, CveIdError> {
         value.as_ref().parse()
     }
@@ -92,7 +93,7 @@ impl<'de> Deserialize<'de> for CveId {
 
 /// An invalid CVE identifier.
 #[derive(Clone, Debug, Eq, PartialEq, thiserror::Error)]
-#[error("invalid CVE identifier `{0}`; expected CVE-YYYY-NNNN with a 4-19 digit sequence")]
+#[error("invalid CVE identifier `{0}`; expected `CVE-YYYY-` followed by 4 to 19 digits")]
 pub struct CveIdError(String);
 
 #[cfg(test)]
@@ -112,7 +113,7 @@ mod tests {
 
         assert_eq!(
             error.to_string(),
-            "invalid CVE identifier `CVE-2024-123`; expected CVE-YYYY-NNNN with a 4-19 digit sequence"
+            "invalid CVE identifier `CVE-2024-123`; expected `CVE-YYYY-` followed by 4 to 19 digits"
         );
     }
 

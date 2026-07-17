@@ -11,6 +11,8 @@ use wiremock::{
     matchers::{header, method, path, query_param},
 };
 
+const EXPECTED_USER_AGENT: &str = concat!("custos-enrich/", env!("CARGO_PKG_VERSION"));
+
 fn default_epss_client() -> EpssClient {
     EpssClient::new().expect("default EPSS client initializes")
 }
@@ -96,7 +98,7 @@ async fn epss_client_requests_an_explicit_enveloped_json_response() {
         .and(query_param("envelope", "true"))
         .and(query_param("pretty", "false"))
         .and(header("accept", "application/json"))
-        .and(header("user-agent", "custos-enrich/0.1.0"))
+        .and(header("user-agent", EXPECTED_USER_AGENT))
         .respond_with(
             ResponseTemplate::new(200)
                 .set_body_bytes(include_bytes!("fixtures/epss_single_response.json")),

@@ -1,0 +1,59 @@
+[package]
+name = "custos-enrich"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Typed FIRST EPSS and CISA KEV clients for vulnerability-prioritization signals"
+documentation = "https://docs.rs/custos-enrich"
+repository = "https://github.com/brianluby/custos-enrich"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+keywords = ["security", "vulnerability", "epss", "kev", "cve"]
+categories = ["api-bindings", "development-tools", "web-programming::http-client"]
+publish = ["crates-io"]
+include = [
+    "src/**/*.rs",
+    "tests/**/*",
+    "examples/**/*.rs",
+    "docs/architecture.md",
+    "Cargo.toml",
+    "Cargo.lock",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "NOTICE",
+    "LICENSE-APACHE",
+    "LICENSE-MIT",
+]
+
+[features]
+default = ["client"]
+client = ["dep:futures-util", "dep:reqwest"]
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["serde", "std"] }
+futures-util = { version = "0.3", optional = true }
+reqwest = { version = "0.13", default-features = false, features = ["query", "rustls", "stream"], optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "net", "rt-multi-thread"] }
+wiremock = "=0.6.4"
+
+[[example]]
+name = "enrich"
+required-features = ["client"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "warn"
+perf = "warn"
+redundant_clone = "warn"

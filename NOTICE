@@ -1,0 +1,15 @@
+Data-source notice
+==================
+
+EPSS scores are provided by the Forum of Incident Response and Security Teams
+(FIRST): https://www.first.org/epss/
+
+CISA's Known Exploited Vulnerabilities catalog is made available under the
+Creative Commons CC0 1.0 Universal dedication:
+https://www.cisa.gov/sites/default/files/licenses/kev/license.txt
+
+Reuse of CISA KEV data does not imply endorsement by CISA or the U.S. Department
+of Homeland Security and does not grant permission to use their seals or logos.
+
+This software is independently developed and is not affiliated with or endorsed
+by FIRST, CISA, or DHS.

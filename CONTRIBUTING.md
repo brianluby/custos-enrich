@@ -4,7 +4,7 @@ Thank you for helping improve `custos-enrich`.
 
 ## Development
 
-Use Rust 1.85 or newer, then run:
+Use Rust 1.94 or newer, then run:
 
 ```console
 cargo fmt --all -- --check

@@ -2,7 +2,7 @@
 name = "custos-enrich"
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.85"
+rust-version = "1.94"
 description = "Typed FIRST EPSS and CISA KEV clients for vulnerability-prioritization signals"
 documentation = "https://docs.rs/custos-enrich"
 repository = "https://github.com/brianluby/custos-enrich"

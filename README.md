@@ -20,11 +20,12 @@ becoming part of a reusable data client.
 
 ## Quick start
 
-Add the crate and an async runtime:
+The crate is not yet published to crates.io. Depend on it from Git, pinned
+to a revision, and add an async runtime:
 
 ```toml
 [dependencies]
-custos-enrich = "0.1"
+custos-enrich = { git = "https://github.com/brianluby/custos-enrich", rev = "<commit>" }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 ```
 

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Raise the minimum supported Rust version to 1.94 to match Custos.
+
 ## [0.1.0] - 2026-07-17
 
 ### Added

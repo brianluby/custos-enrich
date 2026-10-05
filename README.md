@@ -162,7 +162,8 @@ their seals or logos. See [NOTICE](NOTICE) for the compact attribution text.
 
 ## Minimum Rust version
 
-The minimum supported Rust version is 1.85.
+The minimum supported Rust version is 1.94. It matches Custos and is raised
+together with it.
 
 ## License
 

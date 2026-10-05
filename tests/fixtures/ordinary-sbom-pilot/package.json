@@ -1,0 +1,9 @@
+{
+  "name": "custos-ordinary-sbom-pilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Non-production acceptance fixture; dependency intentionally vulnerable and never executed.",
+  "dependencies": {
+    "lodash": "4.17.20"
+  }
+}
